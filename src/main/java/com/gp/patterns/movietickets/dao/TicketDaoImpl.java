@@ -1,4 +1,4 @@
-package com.gp.patterns.movietickets.entities.dao;
+package com.gp.patterns.movietickets.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;

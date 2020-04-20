@@ -1,4 +1,4 @@
-package com.gp.patterns.movietickets.entities.dao;
+package com.gp.patterns.movietickets.dao;
 
 import com.gp.patterns.movietickets.entities.Ticket;
 

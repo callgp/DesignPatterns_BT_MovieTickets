@@ -5,14 +5,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.gp.patterns.movietickets.entities.Ticket;
-import com.gp.patterns.movietickets.entities.dao.TicketDao;
+import com.gp.patterns.movietickets.dao.TicketDao;
+import com.gp.patterns.movietickets.bo.Ticket;
+import com.gp.patterns.movietickets.services.TicketService;
 
 @Controller
 public class TicketController {
 	
 	@Autowired
-	TicketDao dao;
+	private TicketService service;
 	
 	@RequestMapping("/showCreateTicket")
 	public String showCreateTicket() {
@@ -22,7 +23,7 @@ public class TicketController {
 	@RequestMapping("/createTicket")
 	public String createTicket(Ticket ticket, ModelMap modelMap) {
 		
-		dao.create(ticket);
+		service.purchaseTicket(ticket);
 		modelMap.addAttribute("msg", "tkt purchased");
 		return "createTicket";
 	}
